@@ -1,0 +1,280 @@
+/*=========== start block1 hi ===============================*/
+//===========================================
+// старт hi section_1
+.hi {
+	background-color: $block; /*Покрасим весь блок*/
+	@include adaptiveValue("padding-top", 234, 120);
+	@include adaptiveValue("padding-bottom", 100, 40);
+	// .hi__container
+	&__container {
+	}
+	// .hi__body
+	.hi__body {
+	}
+	// .block-text__title
+	&__title {
+		font-weight: 700;
+		line-height: math.div(75, 65);
+		color: $mainColor;
+		@include adaptiveValue("margin-bottom", 35, 20);
+		@include adaptiveValue("font-size", 56, 30);
+	}
+	// .block-text__text
+	&__text {
+		max-width: rem(741);
+		@include adaptiveValue("font-size", 32, 20);
+		line-height: math.div(51, 32);
+		color: #6b7280;
+		@include adaptiveValue("margin-bottom", 70, 30);
+	}
+	// .block-text__button
+	&__button {
+	}
+}
+// финиш hi section_1
+//=============================================
+/*=========== end block1 hi ===============================*/
+/*=========== start block2 services ===============================*/
+// start services
+.services {
+	background-color: $block; /*Покрасим весь блок*/
+	//background-color: #f1facf; /*Покрасим весь блок*/
+	//@include adaptiveValue("padding-top", 100, 50);
+	@include adaptiveValue("padding-bottom", 103, 50);
+	// .services__container
+	&__container {
+	}
+	// .services __text-line
+	&__text-line {
+		@include adaptiveValue("margin-bottom", 102, 40);
+	}
+	// .serv__body
+	&__body {
+	}
+	// .serv__row
+	&__row {
+		display: flex;
+		/*здесь задаются свойства колонок */
+		//margin: 0 rem(-15);
+		/*добавим отступ между колонками ?*/
+		flex-wrap: wrap;
+		margin: 0 auto;
+		@include adaptiveValue("row-gap", 82, 40); // отступ между строчками
+		column-gap: rem(200);
+	}
+	// .serv__column
+	&__column {
+		display: flex;
+		flex: 0 1 50%;
+		/*запрещаем увеличиваться, разрешем уменьшаться, устанвливаем одинаковую ширину*/
+		max-width: rem(450);
+		margin: 0 auto;
+		//text-align: center;
+		//justify-content: center;
+		@media (max-width: $mobile) {
+			flex: 0 1 100%;
+		}
+	}
+	// .serv__item
+	&__item {
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		//margin-bottom: rem(82);
+	}
+	// .serv__image
+	&__image {
+		display: flex;
+		flex: 0 0 rem(80);
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		@include adaptiveValue("margin-right", 48, 20);
+		img {
+			//width: rem(80);
+			//height: rem(60);
+		}
+	}
+	// .serv__text
+	&__desс {
+		//flex: 0 0 70%;
+		flex: 1 1 auto;
+		//padding-right: rem(15);
+	}
+	// .serv__subtitle
+	&__subtitle {
+		font-size: rem(28);
+		line-height: math.div(32, 28);
+		text-align: start;
+		margin: 0 0 rem(16) 0;
+		@include adaptiveValue("font-size", 28, 20);
+	}
+	&__text {
+		color: $grey1;
+		text-align: start;
+		font-size: rem(14);
+		line-height: math.div(21, 14);
+		//@include adaptiveValue("padding-left", 49, 15);
+		//@include adaptiveValue("padding-right", 49, 15);
+	}
+}
+// finish services
+/*=========== end block2 services ===============================*/
+/*=========== start block3 clients ===============================*/
+.clients {
+	background-color: $block; /*Покрасим весь блок*/
+	//background-color: #cff7fa; /*Покрасим весь блок*/
+	//@include adaptiveValue("padding-top", 70, 50);
+	@include adaptiveValue("padding-bottom", 77, 50);
+	// .clients __container
+	&__container {
+	}
+	// .clients __text-line
+	&__text-line {
+		@include adaptiveValue("margin-bottom", 68, 40);
+	}
+	&__row {
+		display: flex; /*Сверстаем колонки*/
+		flex-wrap: wrap; /*Позволим колонкам переходить на следующую строку*/
+		margin: 0px -8px; /*Чтобы раздвинуть колонки делаем отступы на половину ширины отступа между колонками */
+		@include adaptiveValue("row-gap", 45, 30); // отступ между строчками
+	}
+	/*для того чтобы раздвинуть колонки по горизонтали на 16px сначала 
+	раздвинем контейнер&__row на margin: 0px -8px;. А затем на столько же
+	сдвинем сами колонки padding: 0px 8px; - САМЫЙ ПРАВИЛЬНЫЙ СПОСОБ!!! */
+	&__column {
+		width: rem(162);
+		height: rem(59);
+		align-items: center;
+		justify-content: center;
+		padding: 0px 8px; /*Сами колонки сдвигаем на те же 8 px*/
+		flex: 0 1 25%; /*Запрещаем колонке увеличиваться, разрешаем уменьшаться, и делаем размер 50% */
+		//margin: 0px 0px 60px 0px; /*Отступ между колонками - вниз*/
+		max-width: rem(400);
+		margin: 0 auto;
+		@media (max-width: $tablet) {
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: $mobile) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 1 100%;
+		}
+	}
+	&__item {
+	}
+}
+
+.item-logo {
+	height: rem(63);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__row {
+	}
+	&__image {
+		//width: rem(162);
+		/*Запрещаем картинке уменьшаться и увеличиваться, зададим конкретный размер*/
+		flex: 0 0 63px;
+		img {
+			@media (max-width: $mobile) {
+				//width: rem(110);
+				//height: rem(110);
+			}
+			@media (max-width: $mobile) {
+				//width: rem(120);
+				//height: rem(120);
+			}
+		}
+	}
+}
+/*=========== end block3 logo ===============================*/
+/*=========== start block4 team ===============================*/
+//start team
+.team {
+	position: relative;
+	background-color: $block; /*Покрасим весь блок*/
+	//@include adaptiveValue("padding-top", 100, 40);
+	@include adaptiveValue("padding-bottom", 100, 40);
+	// .team__container
+	&__container {
+	}
+	// .team__text-line
+	&__text-line {
+		@include adaptiveValue("margin-bottom", 105, 40);
+	}
+	// .team__row
+	&__row {
+		display: flex; /*Сверстаем колонки*/
+		flex-wrap: wrap; /*Позволим колонкам переходить на следующую строку*/
+		margin: 0px -8px; /*Чтобы раздвинуть колонки делаем отступы на половину ширины отступа между колонками */
+		@include adaptiveValue("row-gap", 60, 30); // отступ между строчками
+	}
+	/*для того чтобы раздвинуть колонки по горизонтали на 16px сначала 
+	раздвинем контейнер&__row на margin: 0px -8px;. А затем на столько же
+	сдвинем сами колонки padding: 0px 8px; - САМЫЙ ПРАВИЛЬНЫЙ СПОСОБ!!! */
+	&__column {
+		padding: 0px 8px; /*Сами колонки сдвигаем на те же 8 px*/
+		flex: 0 1 33.333%; /*Запрещаем колонке увеличиваться, разрешаем уменьшаться, и делаем размер 50% */
+		max-width: rem(400);
+		margin: 0 auto;
+		@media (max-width: $tablet) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: $mobile) {
+			flex: 0 1 100%;
+		}
+	}
+	&__item {
+	}
+}
+
+.item {
+	// .item__row
+	&__row {
+		/*разместим картинку и текст также, как в блоке2*/
+		display: flex;
+		align-items: center;
+	}
+	&__image {
+		/*Запрещаем картинке уменьшаться и увеличиваться, зададим конкретный размер*/
+		flex: 0 0 100px;
+		img {
+			width: rem(100);
+			height: rem(100);
+			border-radius: 50%;
+			@media (max-width: $mobile) {
+				width: rem(110);
+				height: rem(110);
+			}
+			@media (max-width: $mobile) {
+				width: rem(120);
+				height: rem(120);
+			}
+		}
+	}
+	&__body {
+		flex: 0 0 auto; /*тексту  позволяем все действия*/
+		padding: 0px 0px 0px 35px; /*отступ между картинкой и текстом*/
+		align-items: center;
+		justify-content: center;
+	}
+	&__title {
+		color: $mainColor;
+		font-size: rem(28);
+		line-height: math.div(32, 28);
+		font-weight: 700;
+		margin: 0px 0px 11px 0px;
+	}
+	&__text {
+		color: $grey1;
+		font-size: 14px;
+		line-height: math.div(16, 14);
+	}
+	// .item__Mobile
+	&__Mobile {
+	}
+}
+//
+/*=========== end block4 team ===============================*/

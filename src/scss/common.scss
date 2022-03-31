@@ -1,0 +1,85 @@
+// Заголовки, общие БЄМ блоки и проче...
+.row {
+	//display: flex;
+	/*здесь задаются свойства колонок */
+	//margin: 0 rem(-15);
+	/*добавим отступ между колонками ?*/
+	//flex-wrap: wrap;
+	//margin: 0 auto;
+}
+
+.column {
+	display: flex;
+	padding: 0px 15px;
+	flex: 0 1 33.333%;
+	/*запрещаем увеличиваться, разрешем уменьшаться, устанвливаем одинаковую ширину*/
+	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
+
+	/*колонки становятся одинаковые по высоте - по самой высокой*/
+	@media (max-width: $tablet) {
+		flex: 0 1 50%;
+	}
+	@media (max-width: $mobile) {
+		flex: 0 1 100%;
+	}
+}
+//==============================================
+// кнопка стили
+.button {
+	display: inline-block;
+	color: #fff;
+	font-size: rem(24);
+	line-height: math.div(28, 24);
+	padding: rem(16) rem(58);
+	border-radius: rem(6);
+	//border: rem(1) solid $indigo;
+	background-color: $indigo;
+	transition: background-color 0.3s ease 0s;
+	&:hover {
+		background-color: #4521c7;
+	}
+}
+
+//==============================================
+// стили текст внутри линии
+.text-line{
+	text-align: start; /* выравнивание заголовка по центру или краю обертки, если поменять на center */
+	width: 99%; /* ширина обертки. На самом деле для фиксированной верстки можно использовать и px, но лучше сразу адаптировать под разные устройства, т.к. это, что называется, тренди :-) */
+	margin: 0 auto; /* выравнивание обертки по центру документа */
+	//overflow: hidden; /* прячем линии за границами обертки, чтобы в случае изменения ширины экрана линии не выходили за ее пределы */
+	//margin-top: rem(0);
+	//margin-bottom: rem(100); /* отступ от линии до следующего блока
+	@include adaptiveValue("margin-bottom", 84, 40);
+	color: #C2C2C2;
+	font-weight: 300;
+	font-size: rem(14);
+	line-height: math.div(16, 14);
+	span {
+		position: relative;
+	}
+	span:before {
+		display: block; /* делаем псевдоэлемент блоком для последующего работы с ним, как с простым div'ом */
+		width: 1000px; /* устанавливаем ширину линию. Можно использовать произвольную ширину */
+		content: ""; /* позволяет вставлять генерируемое содержание в текст страницы, которое первоначально в тексте отсутствует */
+		position: absolute; /* абсолютное позиционирование для управления линиями */
+		border-bottom: 1px solid #C2C2C2; /* бордер псевдо дива, т.е. сама линия */
+		top: 50%; /* позиционирование по вертикали */
+		right: rem(100); /* позиционирование по горизонтали */
+	}
+	/* аналогичные стили для второго псевдоэлемента */
+	span:after {
+		display: block;
+		width: 2000px;
+		content: "";
+		position: absolute;
+		border-bottom: 1px solid #C2C2C2;
+		top: 50%;
+		left: rem(100);
+		span {
+			position: relative;
+		}
+	}
+}
+//==============================================

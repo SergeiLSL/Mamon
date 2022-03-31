@@ -1,0 +1,15 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+	display: inline-flex; // удалить
+	padding: rem(12) rem(32); // лучьше
+	border-radius: rem(10);
+	@media (any-hover: hover) {
+		&:hover {
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}
