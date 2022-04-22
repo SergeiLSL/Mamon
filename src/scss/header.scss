@@ -28,7 +28,7 @@
 		z-index: 5;
 		width: rem(58);
 		height: rem(58);
-		@include adaptiveValue("margin-right", 25, 0);
+		@include adaptiveValue("margin-right", 25, 15);
 	}
 	&__name {
 		font-size: rem(24);
