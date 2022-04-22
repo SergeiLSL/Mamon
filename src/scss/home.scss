@@ -127,8 +127,8 @@
 	//@include adaptiveValue("padding-top", 70, 50);
 	@include adaptiveValue("padding-bottom", 77, 50);
 	// .clients __container
-	&__container {
-	}
+	&__container {	}
+
 	// .clients __text-line
 	&__text-line {
 		@include adaptiveValue("margin-bottom", 68, 40);

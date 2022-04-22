@@ -25,8 +25,25 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: rem(34);
+		gap: rem(40);
 		@include adaptiveValue("gap", 34, 25);
+	}
+	&__link {
+		font-size: rem(24);
+		color: #B2B2B2;
+		transition: background-color 0.3s ease 0s;
+		&:hover {
+			color: $indigo;
+		}
+		&_1 {
+			font-size: rem(28);
+		}
+		&_2 {
+			font-size: rem(22);
+		}
+		&_4 {
+			font-size: rem(30);
+		}
 	}
 	// .footer__image
 	&__image {
@@ -43,5 +60,4 @@
 		}
 	}
 }
-.social {
-}
+
